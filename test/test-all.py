@@ -40,6 +40,62 @@ class Test(unittest.TestCase):
         file.close()
         self.assertTrue(len(response.content) > 0)
 
+    def test_split_all(self):
+        url = f"{self.base_url}/pdf/split/"
+
+        payload = {"mode": "all"}
+        file = open("./raw/sample_1MB.pdf", "rb")
+        files = [
+            (
+                "file",
+                (
+                    "sample.pdf",
+                    file,
+                    "application/pdf",
+                ),
+            )
+        ]
+        headers = {}
+
+        response = requests.request(
+            "POST",
+            url,
+            headers=headers,
+            data=payload,
+            files=files,
+        )
+
+        file.close()
+        self.assertTrue(len(response.content) > 0)
+
+    def test_delete_pages(self):
+        url = f"{self.base_url}/pdf/delete/pages/"
+
+        payload = {"selection": "1,3-5,10-20"}
+        file = open("./raw/sample_1MB.pdf", "rb")
+        files = [
+            (
+                "file",
+                (
+                    "sample.pdf",
+                    file,
+                    "application/pdf",
+                ),
+            )
+        ]
+        headers = {}
+
+        response = requests.request(
+            "POST",
+            url,
+            headers=headers,
+            data=payload,
+            files=files,
+        )
+
+        file.close()
+        self.assertTrue(len(response.content) > 0)
+
 
 if __name__ == "__main__":
     unittest.main()

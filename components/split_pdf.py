@@ -1,5 +1,5 @@
 import json, uuid, shutil
-from utils import UPLOADS_DIR, SPLIT_PDF_DIR
+from utils import *
 from utils.file_utils import get_file_name
 from utils.extract_utils import extract_selected_pages, extract_all_pages
 from flask import Blueprint, request, send_file
@@ -15,7 +15,7 @@ def split_pdf():
         if len(files) == 0:
             return {"error": "No `file` provided to split"}
         file = files[0]
-        print(file.filename)
+        # print(file.filename)
         if not any([file.filename.endswith(e) for e in [".pdf", ".PDF"]]):
             return {"error": f"File {file.filename} is not a PDF (.pdf, .PDF)"}
 
@@ -97,22 +97,36 @@ def split_pdf():
         )
 
     return {
-        "file": "file to split",
-        "mode": {
-            "selected": "extract selected pages in PDFs",
-            "all": "extract all pages in separate PDFs",
+        "form_body": {
+            "file": "file to split",
+            "mode": {
+                "required": True,
+                "selected": "extract selected pages in PDFs",
+                "all": "extract all pages in separate PDFs",
+            },
+            "selection": {
+                "required": False,
+                "1,3-5,8-10,15;2,6-7;3,5,8": {
+                    "PDF 1": "contains 1,3-5,8-10,15 of original PDF",
+                    "PDF 2": "contains 2,6-7 of original PDF",
+                    "PDF 3": "contains 3,5,8 of original PDF",
+                },
+            },
         },
-        "selection": {
-            "1,3-5,8-10,15;2,6-7;3,5,8": {
-                "PDF 1": "contains 1,3-5,8-10,15 of original PDF",
-                "PDF 2": "contains 2,6-7 of original PDF",
-                "PDF 3": "contains 3,5,8 of original PDF",
-            }
+        "response": {
+            "GET": "help json",
+            "POST": {
+                "zip file contents": "zip file containing all extracted/ splitted files",
+                "json": "json containing error message",
+            },
         },
         "samples": [
             """curl --location 'http://localhost:5000/pdf/split/' \
 --form 'file=@"/C:/Users/Dell/Downloads/sample.pdf"' \
 --form 'mode="selected"' \
---form 'selection="1,3-5;10-14;3-5,8,9"'""".strip()
+--form 'selection="1,3-5;10-14;3-5,8,9"'""".strip(),
+            """curl --location 'http://localhost:5000/pdf/split/' \
+--form 'file=@"/C:/Users/Dell/Downloads/sample.pdf"' \
+--form 'mode="all"'""".strip(),
         ],
     }

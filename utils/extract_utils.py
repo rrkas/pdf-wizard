@@ -9,9 +9,9 @@ def extract_selected_pages(pdf_path: Path, page_num_list: list, out_path: Path):
     page_num_list.sort()
     pages = inputpdf.pages
     output = PdfWriter()
-    for i in page_num_list:
-        if i <= len(pages):
-            output.add_page(pages[i - 1])
+    for i, page in enumerate(pages):
+        if (i + 1) in page_num_list:
+            output.add_page(page)
 
     if isinstance(out_path, str):
         out_path = Path(out_path)

@@ -1,9 +1,9 @@
 # PDF-Wizard 🪄
 
 ## Features
-- split PDF
-    - multiple range
-    - split all pages to separate PDFs
+- split PDF - DONE
+    - multiple range - DONE
+    - split all pages to separate PDFs - DONE
 - merge PDFs
 - conversion
     - other document to PDF
@@ -21,8 +21,8 @@
             - .bpm
             - .gif
             - .tiff
-- delete pages from PDF
-    - multiple range
+- delete pages from PDF - DONE
+    - multiple range - DONE
 - compress PDF
 - protect PDF
 - unlock PDF
