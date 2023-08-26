@@ -1,0 +1,78 @@
+# Resources
+
+## Features
+- split PDF
+    - multiple range
+    - split all pages to separate PDFs
+    https://stackoverflow.com/questions/490195/split-a-multi-page-pdf-file-into-multiple-pdf-files-with-python
+
+- merge PDFs
+    https://stackoverflow.com/questions/3444645/merge-pdf-files
+
+- conversion
+    - other document to PDF
+    - PDF to other document
+    - formats
+        - .docx
+            https://github.com/AlJohri/docx2pdf
+            https://thepythoncode.com/article/convert-pdf-files-to-docx-in-python
+
+        - .xlsx
+            https://medium.com/@alice.yang_10652/python-how-to-convert-excel-xls-or-xlsx-to-pdf-1b3546baba24
+            https://www.geeksforgeeks.org/how-to-convert-pdf-file-to-excel-file-using-python/
+
+        - .pptx
+            https://stackoverflow.com/questions/31487478/how-to-convert-a-pptx-to-pdf-using-python
+            https://dev.to/vijaykhatri96/convert-pdf-files-to-powerpoint-ppt-in-python-obc
+
+        - URL
+            https://stackoverflow.com/questions/23359083/how-to-convert-webpage-into-pdf-by-using-python
+
+        - .html
+            https://www.geeksforgeeks.org/python-convert-html-pdf/
+            https://gist.github.com/aspose-com-gists/24198c493efe72e895b38ec04dd6978d
+        - PDF/A
+            
+        - images
+            - .jpg, .jpeg
+            - .png
+            - .bpm
+            - .gif
+            - .tiff
+            https://datatofish.com/images-to-pdf-python/
+
+- delete pages from PDF
+    - multiple range
+    https://www.geeksforgeeks.org/delete-pages-from-a-pdf-file-in-python/
+
+- compress PDF
+    https://thepythoncode.com/article/compress-pdf-files-in-python
+
+- protect PDF
+    https://stackoverflow.com/questions/43475295/encrypt-pdfs-in-python
+
+- unlock PDF
+    https://stackoverflow.com/questions/28192977/how-to-unlock-a-secured-read-protected-pdf-in-python
+
+- insert header/ footer
+    - Page Number
+    - other constant text
+    https://stackoverflow.com/questions/28281108/reportlab-how-to-add-a-footer-to-a-pdf-file
+
+- insert watermark
+    https://stackoverflow.com/questions/62261355/how-to-add-watermark-in-all-pages-of-pdf-files-with-python
+
+- edit PDF
+    - add text, shapes & images
+
+- rotate PDF
+    - one/ multiple pages
+    https://stackoverflow.com/questions/46921452/batch-rotate-pdf-files-with-pypdf2
+
+- re-arrange pages
+    https://pikepdf.readthedocs.io/en/latest/topics/pages.html
+
+- repair PDF
+
+- OCR
+    https://www.geeksforgeeks.org/python-reading-contents-of-pdf-using-ocr-optical-character-recognition/
