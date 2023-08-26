@@ -1,0 +1,10 @@
+version: '3.3'
+
+services:
+  server:
+    build: .
+    image: rrka79wal/pdf-wizard:0.0.1
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/root/app

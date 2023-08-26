@@ -1,2 +1,5 @@
+media/
 venv/
+
 *.pyc
+
